@@ -22,7 +22,7 @@ public class FileRenameController {
 
     @GetMapping("/list")
     public FileListResDto list(@RequestBody @Valid FileListReqDto dto) {
-        return FileListResDto.builder().build();
+        return fileRenameService.list(dto);
     }
 
     @PostMapping(path = "/validate")

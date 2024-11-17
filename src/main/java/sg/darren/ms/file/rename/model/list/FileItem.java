@@ -4,17 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sg.darren.ms.file.rename.model.FileTypeEnum;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FileListResDto {
+public class FileItem {
 
-    private List<FileItem> list;
-
-    private int count;
+    private String name;
+    private FileTypeEnum type;
+    private BigDecimal size;
 
 }

@@ -15,4 +15,8 @@ public class FileListReqDto {
     @NotBlank
     private String path;
 
+    private String type;
+
+    private String extension;
+
 }
