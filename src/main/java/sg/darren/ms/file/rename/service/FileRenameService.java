@@ -52,6 +52,9 @@ public class FileRenameService {
                                 .divide(BigDecimal.valueOf(1024), RoundingMode.DOWN))   // in MB
                         .build()).toList();
         return FileListResDto.builder()
+                .path(reqDto.getPath())
+                .type(reqDto.getType())
+                .extension(reqDto.getExtension())
                 .list(list)
                 .count(list.size()).build();
     }

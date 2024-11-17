@@ -13,8 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 public class FileListResDto {
 
-    private List<FileItem> list;
-
     private int count;
-
+    private String path;
+    private String type;
+    private String extension;
+    private List<FileItem> list;
 }
