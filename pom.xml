@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>sg.darren.ms</groupId>
-    <artifactId>ms-file-rename</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>file-rename</name>
-    <description>Darren MS</description>
+    <artifactId>ms-file-maintenance</artifactId>
+    <version>1.0.0</version>
+    <name>file-maintenance</name>
+    <description>File Maintenance</description>
     <properties>
         <java.version>17</java.version>
     </properties>
