@@ -16,7 +16,7 @@ import sg.darren.ms.file.rename.service.FileRenameService;
 
 @RestController
 @RequiredArgsConstructor
-public class FileRenameController {
+public class FileMaintenanceController {
 
     private final FileRenameService fileRenameService;
 
