@@ -9,13 +9,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.util.Date;
 
 @Entity
-@Table(name = "tbl_scan")
+@Table(name = "tbl_scan_delete")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ScanEntity {
+public class ScanDeleteEntity {
 
     @JsonIgnore
     @Id
@@ -25,17 +25,8 @@ public class ScanEntity {
     @Column(name = "path")
     private String path;
 
-    @Column(name = "folder")
-    private String folder;
-
-    @Column(name = "file_name")
-    private String fileName;
-
-    @Column(name = "duplicate")
-    private String duplicate;
-
-    @Column(name = "duplicate_with")
-    private String duplicateWith;
+    @Column(name = "deleted")
+    private String deleted;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
