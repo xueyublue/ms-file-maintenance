@@ -3,13 +3,15 @@ package sg.darren.ms.file.rename;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Arrays;
+import java.util.List;
 
 public class DeleteDuplicatePhotos {
 
     // =IF(A2=A1,1,"")
 
     public static void main(String[] args) throws Exception {
-        String filename = "C:/Users/xueyu/Downloads/duplicate-20250103-1.txt";
+        String filename = "H:/DeleteDuplicatePhotos/duplicate-20250104-4.txt";
         int total = 0;
         int deleted = 0;
         int skipped = 0;
@@ -25,7 +27,7 @@ public class DeleteDuplicatePhotos {
                 File file = new File(line);
                 total = total + 1;
                 System.out.println("[" + format(total) + "] exists=" + file.exists() + " " + line);
-                if (file.exists()) {
+                if (file.exists() && matchExtension(file.getName())) {
                     deleted = deleted + 1;
                     boolean result = file.delete();
                     System.out.println("deleted=" + deleted + " skipped=" + skipped + " total=" + total);
@@ -41,4 +43,10 @@ public class DeleteDuplicatePhotos {
     private static String format(int in) {
         return String.format("%03d", in);
     }
+
+    private static boolean matchExtension(String filename) {
+        List<String> extensions = Arrays.asList(".jpg", ".jpeg", ".mov");
+        return extensions.stream().anyMatch(item -> filename.toLowerCase().endsWith(item));
+    }
+
 }
